@@ -1,0 +1,30 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %X{dd.service} %X{dd.env} %X{dd.version} %X{dd.trace_id} %X{dd.span_id} - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>app.log</file>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
+
+	<appender name="JSON_TCP" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>intake.logs.datadoghq.com:10516</destination>
+		<keepAliveDuration>1 minute</keepAliveDuration>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
+			<prefix class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+				<layout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>${DD_API_KEY} %mdc{keyThatDoesNotExist}</pattern>
+				</layout>
+			</prefix>
+		</encoder>
+		<ssl/>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="JSON_TCP" />
+	</root>
+</configuration>
