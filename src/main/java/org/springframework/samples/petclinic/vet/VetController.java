@@ -36,6 +36,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 class VetController {
+
 	private static final Logger log = LoggerFactory.getLogger(VetController.class);
 
 	private final VetRepository vets;

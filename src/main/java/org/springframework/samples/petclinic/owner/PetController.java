@@ -37,6 +37,7 @@ import java.util.Collection;
 class PetController {
 
 	private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
+
 	private static final Logger log = LoggerFactory.getLogger(PetController.class);
 
 	private final PetRepository pets;
