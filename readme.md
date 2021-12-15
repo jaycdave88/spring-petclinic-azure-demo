@@ -1,4 +1,17 @@
-# Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
+# Spring PetClinic Sample Application - Fork
+
+This is a fork of the main PetClinic sample application (https://github.com/spring-projects/spring-petclinic). It adds a few things to make it more suitable for the datadog demo environment:
+
+- RUM integration
+- Some log statements
+- The Azure Plugin to enable deployments
+
+## Deploying to Azure
+```
+./mvnw package azure-webapp:deploy
+```
+
+Tests may be skipped with `-DskipTests`
 
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
