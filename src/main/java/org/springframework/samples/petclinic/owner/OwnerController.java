@@ -78,6 +78,7 @@ class OwnerController {
 		}
 		else {
 			this.owners.save(owner);
+			log.info("Owner saved: {}", owner.getId());
 			return "redirect:/owners/" + owner.getId();
 		}
 	}
@@ -154,6 +155,7 @@ class OwnerController {
 		else {
 			owner.setId(ownerId);
 			this.owners.save(owner);
+			log.info("Owner updated: {}", ownerId);
 			return "redirect:/owners/{ownerId}";
 		}
 	}
@@ -171,6 +173,7 @@ class OwnerController {
 			pet.setVisitsInternal(visits.findByPetId(pet.getId()));
 		}
 		mav.addObject(owner);
+		log.info("Viewing owner: {}", ownerId);
 		return mav;
 	}
 
