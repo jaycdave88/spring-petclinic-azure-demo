@@ -288,8 +288,8 @@
           <subscriptionId>8c56d827-5f07-45ce-8f2b-6c5001db5c6f</subscriptionId>
           <resourceGroup>apm-aas-java</resourceGroup>
           <appName>spring-petclinic-with-logs</appName>
-          <pricingTier>P1v2</pricingTier>
-          <region>centralus</region>
+          <appServicePlanName>asp-spring-petclinic-with-logs</appServicePlanName>
+          <skipCreateAzureResource>true</skipCreateAzureResource>
           <runtime>
             <os>Windows</os>
             <javaVersion>Java 8</javaVersion>

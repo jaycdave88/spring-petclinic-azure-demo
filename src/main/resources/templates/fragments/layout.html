@@ -104,12 +104,13 @@
         applicationId: 'd3fb210f-66c6-4779-ac19-89bbcad61694',
         clientToken: 'pub83a3e7a509b33b08cc4a344f083ad259',
         site: 'datadoghq.com',
-        service:'petclinic-frontend',
+        service:'aas-demo-petclinic-java',
         env:'dev',
-        version: '1.0.0',
+        version: '1.0',
         sampleRate: 100,
         trackInteractions: true,
-        defaultPrivacyLevel: 'mask-user-input'
+        defaultPrivacyLevel: 'mask-user-input',
+        allowedTracingOrigins: ["https://spring-petclinic-with-logs.azurewebsites.net"]
     });
 
     window.DD_RUM &&
